@@ -1,0 +1,50 @@
+{% extends 'myadmin/school/school_base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/das.css' %}">
+
+<div class="thead" id="myyyy">
+  <h1>Course List</h1> 
+  <a class="plan" id="plan" href="/admin/home">New</a> 
+  <a class="plan2" id="plan2" href="/admin/leason/home">Leason</a> 
+</div>
+<br><br><br><br><br>
+
+
+<div id="table-course-div">
+  <table class="table course-table" id="table-course" style="">
+  <thead class="thead-dark">
+    <tr>
+      
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in product %} 
+    <tr style="border-bottom: 1px solid gray; background-color: white;">
+      <!-- <th scope="row">{{ product.id }}</th> -->
+      <td><a href="/admin/view/{{product.id}}">{{ product.name }}</a></td>
+      <td>{{ product.price }}</td>
+      <td><a href="/admin/edit/{{product.id}}"> <i class="fa fa-edit"></i></a></td>
+      <td><a href="/admin/delete/{{product.id}}"><i class="fa fa-trash"></a></i></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

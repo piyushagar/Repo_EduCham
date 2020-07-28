@@ -1,0 +1,41 @@
+{% extends 'student/main.html' %}
+{% load static %}
+{% block content %}
+{% for  school in  school %}
+	<div style="background-image: url('/media/{{school.img}}');" class="course-block block homepage_hero">
+		<div class="homepage-hero" >
+	  		<div class="container" >
+	    		<div class="row text-center">
+			      <h2 class="headline">{{school.title}}</h2>
+			      <h3 class="subtitle">{{ school.subtitle}}.</h3>
+			      
+			        
+			          <br><br><a class="tch-btn-header-primary" href="/sign_up">Enroll now</a>
+			    </div>
+	  		</div>
+		</div>
+	</div>
+{% endfor %}
+{% for orderitem in orderitems %} <h1>{{orderitem.id}}</h1>{% endfor %}
+<div class="container" style="height: 1050px; padding-top: 50px;">
+	<h1 style="padding-bottom: 50px; text-align: center;">Featured Courses</h1>
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="/media/{{product.image}}">
+			<div class="box-element product">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+
+				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Enroll Now</button>
+				<a class="btn btn-outline-success" href="product/{{product.id}}">View</a>
+				<h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+		<a class="tch-btn-header-primary" href="/sign_up">Enroll now</a>
+	</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/sign.css' %}">
+</head>
+
+
+<!-- form start here -->
+{% load crispy_forms_tags %}
+
+<div class="signin-form">
+  {% load crispy_forms_tags %}
+  <form method="post" enctype="multipart/from-data" style="text-align: center">
+    {% csrf_token %}
+    <div class="form-header">
+      <h2>Sign In</h2>
+      <p>Login To TSGI</p>
+    </div>
+    <div class="form-group">
+      {{form | crispy }}
+    </div>
+    <div class="small">
+      Forgot password? 
+      <a href="/accounts/password/reset">Click Here</a>
+    </div>
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <div class="form-group">
+      <button type="submit" class="button is-danger is-rounded">Sign Up</button>
+    </div>
+    <div class="text-center small" style="color: #674288;">                        
+      <a href="/accounts/login">Already have an account? Login</a>
+    </div>
+    
+  </form>
+</div>
+{% endblock %}

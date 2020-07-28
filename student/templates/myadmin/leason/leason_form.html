@@ -1,0 +1,87 @@
+{% extends 'myadmin/school/school_base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- main heading start here-->
+<div class="thead" id="myyyy">
+  <h1>New Course</h1> 
+</div>
+<br><br><br><br><br>
+<!-- main heading end here-->
+
+<!--  schoolheading start here-->
+<div class="day" id="id-day">>
+  <h3>Information</h3>
+  <span>Add basic information about the course and author name.<br>
+
+To add author headline, image, and bio, please visit site > bios.</span>
+</div>
+
+<form method="post" class="form-horizontal" enctype="multipart/form-data" id="id-form-horizontal">
+    {% csrf_token %}
+    
+
+
+    
+
+<div id="div_id_title" class="form-group"> <label for="id_title" class=" requiredField">
+                Title<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="title" maxlength="100" class="textinput textInput form-control" required="" id="id_title" {% if form.title.value != None %}value="{{ form.title.value|stringformat:'s' }}" {% endif %}"> </div> </div> <div id="div_id_slug" class="form-group"> <label for="id_slug" class=" requiredField">
+                Slug<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="slug" maxlength="200" class="textinput textInput form-control" required="" id="id_slug"> </div> </div> <div id="div_id_label" class="form-group"> <label for="id_label" class=" requiredField">
+                Label<span class="asteriskField">*</span> </label> <div class=""> <select name="label" class="select form-control" id="id_label"> <option value="y" selected="">fa fa-youtube-play</option> <option value="l">fa fa-lightbulb-o</option> <option value="f">fa fa-file-text</option>
+
+</select> </div> </div> <div id="div_id_button" class="form-group"> <label for="id_button" class=" requiredField">
+                Button<span class="asteriskField">*</span> </label> <div class=""> <select name="button" class="select form-control" id="id_button"> <option value="s" selected="">Start</option> <option value="p">Preview</option>
+
+</select> </div> </div> <div id="div_id_video" class="form-group"> <label for="id_video" class="">
+                Video
+            </label> <div class=""> <input type="file" name="video" class="clearablefileinput form-control-file" id="id_video"> </div> </div> <div id="div_id_product" class="form-group"> <label for="id_product" class="">
+                Product
+            </label> <div class=""> <select name="product" class="select form-control" id="id_product"> <option value="" selected="">---------</option> <option value="1">Codecademy Python Walkthrough and Tutorial Series (2016 New)</option> <option value="5">msg</option> <option value="6">msg</option>
+
+</select> </div> </div> <div id="div_id_content" class="form-group"> <label for="id_content" class="">
+                Content
+            </label> <div class=""> <textarea name="content" cols="40" rows="10" class="textarea form-control" id="id_content"></textarea> </div> </div>
+
+
+    
+    <input type="submit" value="Submit">
+</form>
+
+<hr style="margin-left: 270px;  ">
+<div class="alert alert-info _3x1ps"  id="alert">
+  <div ng-transclude="ng-transclude" ng-class="{ 'border-left': title }" class="alert-text-wrapper">
+    <a ng-href="" href="" target="_blank" rel="noopener" style="color: #ea7e4d; text-decoration: underline;">Learn more</a>
+    <span class="space"></span>
+    <span ng-bind="text">about the transactions breakdown in the Educhum Knowledge Base</span>
+  </div> 
+</div>
+
+<div class="tch-onboarding-header" style="padding-top: 100px;" >
+    <div class="tch-onboarding-header-wrapper">
+        <div class="tch-onboarding-header-body" id="id-tch-onboarding-header">
+            <div class="steps-container">
+                <ul class="steps">
+                 
+                    <li class="step step-disabled" style=" margin-top: -15px;
+                    margin-left: -180px;" > <a class="step-link fastclickable"><span class="step-number" id="id-step-number">1</span><i class="checkmark-icon fa fa-check"></i><span id="id-step-disable">Add information</span></a> </li>
+                
+                    <li class="step step-disabled" style="margin-top: -15px; margin-left:   10px;"> 
+                        <a class="step-link fastclickable" href="/admin/leason/new">
+                            <span class="step-number" id="id-step-number2">2</span>
+                            <i class="checkmark-icon fa fa-check"></i><span id="id-step-disable">  Add curriculum</span>
+                        </a> 
+                    </li>
+                 
+                    <li class="step step-disabled" style="margin-top: -15px; margin-left:   20px;"> <a class="step-link fastclickable"><span class="step-number" id="id-step-number2">3</span><i class="checkmark-icon fa fa-check"></i><span  id="id-step-disable">Add a price</span></a> </li>
+                   
+                    <li class="step step-disabled" style="margin-top: -15px; margin-left:   100px;"> <a class="step-link fastclickable" id="id-step-number2">Next ›</a> </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

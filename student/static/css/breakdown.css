@@ -1,0 +1,113 @@
+
+.table{
+	background-color: #FFFFFF;	
+    margin-left: 580px;
+    margin-top: -200px;
+
+}
+tr:hover{
+	background-color: #F5F6F7;
+}
+.day{
+	margin-left: 18%;
+}
+.day h3{
+	font-size: var(--fs0);
+    line-height: var(--lh0);
+    font-weight: 600;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+
+}
+.day span{
+	color: gray;	
+}
+#alert{
+	margin-top: 30px;
+	text-align: center;
+	margin-left: 40%;
+	margin-right: 15%;
+	display: inline-block;
+    font-weight: 400;
+    background: #fff8f5;
+    border: 1px solid #ffccb5;
+    color: #ea7e4d;
+    
+}
+.thead{
+	position: absolute;
+    width: 85%;
+    display: flex;
+
+    align-items: center;
+    
+    
+    margin-left: 230px;
+
+    padding-left: 23px;
+    padding-right: 30px;
+    min-height: 57px;
+    padding-top: 0;
+    background: #fff;
+    border-bottom: 1px solid #e6e9ec;
+    margin-bottom: 20px;
+
+}
+.thead h1{
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1000px;
+    margin: 0 24px;
+    font-size: var(--fs0);
+    line-height: var(--lh0);
+    font-weight: 600;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+
+.no-transactions-container {
+
+    display: flex;
+    align-items: center;
+    height: 720px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    padding: 40px 100px;
+    margin-left: 18%;
+    width: 80%;
+    
+}
+._3O4L_ {
+    font-size: var(--fs5);
+    line-height: var(--lh5);
+    font-weight: 600;
+    font-size: 30px;
+}
+._1ET7C, ._1xvY1, ._2JQIJ, ._2kIOe, ._2po1U, ._3c0o, ._3eZL7, ._3m0xp, ._3O4L_, ._3x1ps, ._22oLp, ._29tjV, .KDamJ {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 22px;
+    margin-bottom: 11px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: inherit;
+}
+.no-transactions-container .description {
+    color: var(--slate);
+    font-size: 15px;
+}
+p {
+    margin: 0 0 11px;
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+}
+.no-transactions-container .no-transactions-image {
+    width: 300px;
+    height: 300px;
+    vertical-align: middle;
+    margin-left: 200px;
+    border: 0;
+}

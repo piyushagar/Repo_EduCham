@@ -1,0 +1,132 @@
+course-section .section-title {
+    background: #e8e8e8;
+    padding: 10px 16px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+}
+.course-section ul.section-list {
+    margin: 0;
+    padding: 0;
+}
+.course-section {
+    margin-bottom: 10px;
+}
+.course-section ul.section-list .section-item {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border-bottom: 1px solid #fff;
+}
+.course-section ul.section-list .section-item.next-lecture .item {
+    color: #2b3636;
+}
+.course-section ul.section-list .section-item .item {
+    display: block;
+    padding: 11px 16px;
+    background: #f0f0f0;
+    list-style-type: none;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 200;
+}
+.course-section .section-lock, .course-section .section-days-to-drip, .course-section .section-days-logged-in, .course-section .section-days-logged-out {
+    display: none;
+}
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.course-section .section-lock, .course-section .section-days-to-drip, .course-section .section-days-logged-in, .course-section .section-days-logged-out {
+    display: none;
+}
+.course-section ul.section-list .section-item.next-lecture .status-icon {
+    background: url(//assets.teachablecdn.com/icons/course-incomplete.png) 1px 0px #2b3636;
+    box-shadow: inset 0px 0px 0px 2px #2b3636;
+}
+.course-section ul.section-list .section-item .status-icon {
+    width: 20px;
+    height: 20px;
+    float: left;
+    border-radius: 14px;
+}
+.course-section ul.section-list .section-item.next-lecture .item {
+    
+    
+}
+.course-section ul.section-list .section-item .item {
+    display: block;
+    padding: 11px 16px;
+    background: #f0f0f0;
+    list-style-type: none;
+    font-size: 15px;
+    color: #425252;
+    text-decoration: none;
+    font-weight: 200;
+}
+.course-section ul.section-list .section-item.incomplete .status-icon {
+    background: none;
+    box-shadow: inset 0px 0px 0px 2px #FC9C27;
+}
+.course-section ul.section-list .section-item .status-icon {
+    width: 20px;
+    height: 20px;
+    float: left;
+    border-radius: 14px;
+}
+.fa-youtube-play:before {
+    content: "\f16a";
+}
+.course-section ul.section-list .section-item .lecture-name {
+    font-weight: 200;
+}
+.course-section ul.section-list .section-item .title-container {
+    border-left: 1px solid rgba(252,156,39,0.1);
+    margin: -11px;
+    padding: 10px;
+    margin-left: 41px;
+    padding-right: 70px;
+}
+.course-section ul.section-list .section-item .item .btn-primary {
+    margin-top: -3px;
+    margin-right: -5px;
+}
+.course-mainbar .course-section .btn-primary {
+    margin-right: -65px !important;
+}
+.btn-sm, .btn-sm:active, .btn-sm:focus {
+    border-radius: 5px !important;
+    padding: 0px 13px !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 26px !important;
+}
+.btn-primary, .btn-primary:active, .btn-primary:focus {
+    background: #FC9C27 !important;
+    border: 1px solid #FC9C27 !important;
+    font-weight: 600 !important;
+    outline: none !important;
+    color: #fff;
+    border-radius: 20px;
+    padding: 3px 18px !important;
+}
+.pull-right {
+    float: right !important;
+}
+.btn-sm, .btn-group-sm>.btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}

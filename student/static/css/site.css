@@ -1,0 +1,132 @@
+.domain-heading{
+    text-align: center;
+    font-size: 31px;
+    line-height: var(--lh6);
+    
+    margin-left: 200px;
+
+}
+.domain-subheading{
+    text-align: center;
+    color: #676d73;
+    margin-left: 200px;
+    font-size: var(--fs1);
+    line-height: var(--lh1);
+    font-weight: 600;
+}
+.domain-url{
+    text-align: center;
+    color: #676d73;
+    font-size: 15px;
+    line-height: var(--lh1);
+    font-weight: 400;
+    margin-top: 16px;   
+}
+.http-container{
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+    transition: border-color .2s ease;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #dbdbdb;
+    border-right: none;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    vertical-align: baseline;
+    background-color: #F5F6F7;
+    width: 250px;
+}
+.domain-http{
+    text-align: center;
+    margin-left: 8px;
+    padding: 6px;   
+}
+.input-container{
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+    margin-left: 66px;
+    margin-top: -38px;
+    padding: 0;
+    
+
+}
+.domain-input{
+    text-align: center;
+    margin-left: 18px;
+    padding: 6px;
+    transition: border-color .2s ease;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #dbdbdb;
+    border-right: none;
+    border-left: none;
+    width: 47%;
+    margin-top: 4px;
+      
+}
+.teachable-container{
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+    transition: border-color .2s ease;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #dbdbdb;
+    border-right: none;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    vertical-align: baseline;
+    background-color: #F5F6F7;
+    width: 22%;
+    margin-left: 395px;
+    margin-top: -34px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #dbdbdb;
+    border-right: none;
+    border-left: none;
+
+}
+.domain-teachable{
+    text-align: center;
+    margin-left: 8px;
+    padding: 6px;
+
+}
+.domain-button{
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: 600;
+    font-size: var(--fs-1);
+    line-height: var(--lh-1);
+    background-color: var(--money);
+    border: 1px solid var(--money);
+    color: #fff;
+}
+#domain-button{
+    color: white;     
+    background-color: #1ea69a;
+    border: 1px solid #1ea69a;
+    margin-left: 200px;
+    margin-top: 0px;
+  
+}
+.domain-container{
+    margin-left: 200px;
+
+}

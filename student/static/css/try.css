@@ -1,0 +1,134 @@
+.tch-onboarding-header-body {
+  position: fixed;
+  color: #000;
+  bottom: 0;
+  background: #1ea69a;
+  height: 55px;
+  -webkit-transition: 0 !important;
+  transition: 0 !important;
+  overflow: hidden;
+  z-index: 1005;
+  width: 82%;
+  margin-left: 275px;
+}
+
+.tch-onboarding-header .tch-onboarding-header-wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 1004;
+}
+.tch-onboarding-header .tch-onboarding-header-wrapper .steps-container {
+    min-width: 500px;
+    margin-left: 225px;
+    position: relative;
+}
+.tch-onboarding-header-body ul.steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.tch-onboarding-header-body ul.steps > li.step {
+    width: 25%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    transition: none !important;
+}
+.tch-onboarding-header-body ul.steps > li.step .step-number {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 23px;
+    font-size: 14px;
+    padding-top: 1px;
+    margin-right: 11px;
+    vertical-align: 2px;
+    display: inline-block;
+    font-weight: 500;
+}
+.tch-onboarding-header-body ul.steps > li.step-active .step-number {
+    border: 1px solid #fff !important;
+    background: #fff;
+    color: #1ea69a;
+}
+.tch-onboarding-header-body ul.steps > li.step .fa {
+    vertical-align: 1px;
+    margin-right: 7px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 22px;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.tch-onboarding-header-body ul.steps > li.step {
+    width: 25%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    transition: none !important;
+}
+.tch-onboarding-header-body ul.steps > li.step-disabled > a.step-link {
+    pointer-events: none;
+    color: rgba(255, 255, 255, .41) !important;
+}
+.tch-onboarding-header-body ul.steps > li.step > a.step-link {
+    cursor: pointer;
+    position: relative;
+    float: left;
+    height: 110px;
+    padding: 14px 5px 0;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    transition: none !important;
+}
+.tch-onboarding-header-body ul.steps > li.step-disabled > a.step-link .step-number {
+    border: 1px solid rgba(255, 255, 255, .41);
+}
+.tch-onboarding-header-body ul.steps > li.step .step-number {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 23px;
+    font-size: 14px;
+    padding-top: 1px;
+    margin-right: 11px;
+    vertical-align: 2px;
+    display: inline-block;
+    font-weight: 500;
+}
+.tch-onboarding-header-body ul.steps > li.step > a.step-link .checkmark-icon, .tch-onboarding-header-body ul.steps > li.step > a.step-link .lock-icon {
+    display: none !important;
+}
+.tch-onboarding-header-body ul.steps > li.step .fa {
+    vertical-align: 1px;
+    margin-right: 7px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 22px;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}

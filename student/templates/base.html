@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Ecom</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+  <script type="text/javascript">
+    var user = '{{request.user}}'
+
+    function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getToken('csrftoken')
+  
+  </script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+  <a class="navbar-brand" href="/" >{% for school in school %}{{school.name}}{% endfor %}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav" style="margin-left: 400px;" >
+      
+      {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="/course">All Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/course">My Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">Cart</a>
+        </li>
+        
+
+      {% else %}
+      <li class="nav-item">
+          <a class="nav-link" href="/accounts/login/" style="margin-left: 400px;">Login</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" id="signup" href="/accounts/register/">Signup</a>
+      </li>
+      {% endif %}
+      {% if user.is_superuser %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-circle"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/admin">Admin</a>
+            <a class="dropdown-item" href="/new/{{request.tenant.id}}">Manage subdomain</a>
+            <a class="dropdown-item" href="/accounts/logout">Logged out user</a>
+          </div>
+        </li>
+      {% endif %}
+    </ul>
+    
+  </div>
+</nav>
+
+
+{% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}alert-dismissible fade show" role="alert"  style="background-color: #83c11f; margin-top: 100px;">
+        <strong>{{ message }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+      {% endif %}
+{% block content %}
+
+
+{% endblock content %}
+
+
+<footer class="footer">
+  <div class="col-xs-12 col-sm-4 col-md-4 footer-column" style="text-align: center;">
+      <p>
+          ©
+          {% for school in school %}{{school.name}}{% endfor %}
+          2020
+        </p>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-4 footer-column" id="terms">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm" style="margin-left: 30px;">
+            Terms of Use Privacy Policy
+          </div>
+          <div class="col-sm" style="margin-left: 800px; margin-top: -38px;">
+            Powered by Educhum
+          </div>
+          
+        </div>
+</div>
+     
+      
+                    
+                
+          
+        
+  </div>
+
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+</body>
+</html>

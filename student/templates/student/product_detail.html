@@ -1,0 +1,187 @@
+{% extends 'student/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/leason.css' %}">
+<!-- homepage baneer product -->
+<div style="-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 550px;
+    background-size: cover; background-image: url('/media/{{products.image}}');" class="course-block block homepage_hero" >
+    <ul class="list-group" style="text-align: center;">
+      <li class="headline" id="course-detail-name">{{products.name}}</li>
+      <li class="subtitle">{{ products.subtitle}}.</li>
+      <li class=""><a class="tch-btn-header-primary" href="/sign_up">Enroll now</a></li>
+    </ul>
+</div>
+
+
+<div class="font-awesome-detail" style="" id="font-awesome-detail">
+  {% for author in author%}
+    
+    <br />
+    <a
+        aria-label="Share on facebook"
+        href="{{author.facebook}}"
+        onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+        <i
+            class="fa fa-facebook-square facebook-button"
+            data-ss-event-name="Facebook link"
+            data-ss-event-type="button"  id="facebook-link"
+        ></i>
+    </a>
+    <br />
+    <a
+        aria-label="Share on twitter"
+        href="{{author.twitter}}"
+        onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+    >
+        <i
+            class="fa fa-twitter-square twitter-button"
+            data-ss-event-name="Twitter link"
+            data-ss-event-type="button"
+        ></i>
+    </a>
+    <br />
+    <a
+        aria-label="Share on linkedin"
+        href="{{author.linkedin}}"
+        onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+    >
+        <i
+            class="fa fa-linkedin-square linkedin-button"
+            data-ss-event-name="LinkedIn link"
+            data-ss-event-type="button"
+        ></i>
+    </a>
+    {% endfor %}
+</div>
+
+<div class="container">
+
+  <p class="description" id="course-discription">{{products.discription}}</p>
+</div>
+<div class="author-container" id="author-container">
+  <div class="container">
+    <div class="row" >
+      <div class="col-xs-1 visible-xs" ></div>
+        <div class="col-lg-8 col-lg-offset-2 col-xs-10 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 instructor" style="">
+          <h2 style="" id="instructor">
+          {% for author in author %}
+          Your Instructor
+          </h2>
+          <br>
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 text-center" id="instructor-container">
+              <img class="large-img-rounded img-responsive" src="/media/{{author.image}}" alt="{{author.name}}">
+              <div class="author-name">
+                {{author.name}}
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-8">
+              <p class="data-children-count" style="" id="instructor-introduction">{{author.introduction}}
+              </p>
+            </div>
+          </div>
+          <br>
+          {% endfor %}
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<div class="container course-curriculum" id="course-curriculum" >  
+
+    <div style="margin: auto;">
+      <h1 style="">Course Curriculum</h1>
+    </div>
+    <div class="col-sm-12 course-section">
+      <div class="section-title" id="section-title">
+        <span class="section-lock" >
+          <i class="fa fa-lock"></i>&nbsp;
+        </span>
+        {{products.name}}
+        <div class="section-days-to-drip">
+          <div class="section-days-logged-in">
+            Available in
+            <span class="section-days-to-drip-number"></span>
+            days
+          </div>
+          <div class="section-days-logged-out">
+            <span class="section-days-to-drip-number"></span>
+            days
+            after you enroll
+          </div>
+        </div>
+      </div>
+
+    <ul class="section-list" >
+      {% for leason in products.leasons %}
+
+      <li class="section-item incomplete next-lecture" id="leason">
+        <a class="item" href="/leason/{{leason.id}}">
+          <span class="status-container" aria-label="Current item">
+            <span class="status-icon">
+              &nbsp;
+            </span>
+          </span>
+          <div class="title-container" >
+            <div class="btn-primary btn-sm pull-right" >
+              {{leason.get_button_display}}
+            </div>
+            <span class="lecture-icon">
+              <i class="{{leason.get_label_display}}"></i>
+            </span>
+            <span class="lecture-name">
+              {{leason.title}}
+            </span>
+          </div>
+        </a>
+        
+      </li>
+      {% endfor %} 
+    </ul>
+  </div> 
+  </div>  
+</div>
+
+<div class="faq-container" id="faq-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 faq" id="faq">
+        <h2 class="faq-header" id="faq-header">
+          <i class="fa fa-question-circle"></i>
+          Frequently Asked Questions
+        </h2>
+        <br>
+        {% for faq in faq %}        
+        <div class="faq-question">
+          {{faq.question}}
+        </div>
+        <div class="faq-answer">
+          {{faq.ans}}
+        </div> 
+        {% endfor %} 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="get-started-now-container"><br><br><br><br><br>
+  <h2 class="get-started-now">Get started now!</h2>
+  <div class="get-started-now-btn-container">
+    <a id="get-started-now-btn" href="/course" ><i class="fa fa-shopping-cart" style="margin-right: 22px;"></i>Enroll In Course For Free</a>
+  </div>
+  
+</div>
+  
+{% endblock content %}

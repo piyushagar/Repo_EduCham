@@ -1,0 +1,88 @@
+{% extends 'myadmin/school/school_base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="thead" id="myyyy">
+  <h1>Create Another Domain</h1> 
+</div>
+
+
+
+
+
+
+
+<div class="no-transactions-container" id="no-transactions-container-domain" style="margin-top: 100px;">
+  <div class="no-transactions-copy" id="no-transactions-copy-domain">
+    <div>
+      <h1 class="domain-heading" >Confirm your school domain</h1>
+      <h2 class="domain-subheading">If you edit this domain, your school URL will update the next time you log out.</h2>
+    </div>
+    <div class="domain-container">
+      <label class="domain-url" for="url">URL</label>
+          <form enctype="multipart/form-data" method="post">
+             {% csrf_token %}
+                <div id="div_id_domain" class="form-group">
+                    <label for="id_domain" class="requiredField"> Domain<span class="asteriskField">*</span> </label>
+                    <div class="">
+                        
+                        <input type="text" name="domain" maxlength="253" class="textinput textInput form-control" required="" id="id_domain" />
+                        
+                        
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                <div id="div_id_is_primary" class="form-check">
+                    <input type="checkbox" name="is_primary" class="checkboxinput form-check-input" id="id_is_primary" checked="" />
+                    <label for="id_is_primary" class="form-check-label">
+                        Is primary
+                    </label>
+                </div>
+            
+                <input name="tenant" id="id_tenant" for="id_tenant" type="hidden"  value="{{request.tenant.id}}">
+
+                <input id="domain-button" class="btn btn-danger my-3" type="submit" />
+            </form>
+    </div>
+        <br>
+         <div>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    
+                    <th scope="col">Primary</th>
+                    <th scope="col">domain</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for subdomain in subdomain %}
+                  <tr>
+                    
+                    <td>{{subdomain.is_primary}}</td>
+                    <td>{{subdomain.domain}}</td>
+                    <td><a href="http://{{subdomain.domain}}:8000/delete/{{subdomain.id}}">Delete</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+          </table>
+         </div>
+      </div>
+    
+  </div>  
+</div>
+
+
+    <!-- Create a Form -->
+    
+        <!-- Security token by Django -->
+        
+        
+        
+        
+   
+
+
+
+
+{% endblock %}

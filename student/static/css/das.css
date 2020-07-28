@@ -1,0 +1,168 @@
+@media only screen and (max-width: 700px) {
+ 
+  #myyyy{
+   width: 100%;
+    margin-left: 0px;
+  }
+  
+  #id-day{
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+  }
+  #id-form-horizontal{
+    margin-left: 15px;
+    width: 92%;
+    margin-top: 60px;
+  }
+  #id-tch-onboarding-header{
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  #id-step-number{
+    margin-left: -135px;
+  }
+  #id-step-number2{
+    margin-left: -9 0px;
+  }
+  #id-step-disable{
+    margin-left: -10px;
+  }
+  #table-course{
+    margin-left: 20px;
+    width: -15%;
+  }
+ 
+  #table-course-btn{
+    margin-left: 20px;
+    width: 90%;
+  }
+  #no-transactions-container-domain{
+    margin-left: 20px;
+    width: 90%;
+  }
+  #no-transactions-copy-domain{
+    margin-left: -280px;
+  }
+  #delete{
+    margin-left: -300px;
+    margin-top: -100px;
+  }
+  #main-navbar{
+    width: 100%;
+  }
+  #main-brand{
+    width: 1px;
+    margin-left: 0px;
+    font-size: 18px;
+  }
+  #course-row{
+    margin-left: 100px;
+  }
+  #all-courses{
+    margin-left: 80px;
+  }
+  #footer-terms{
+    margin-left: -500px;
+    margin-top: 30px;
+  }
+  #footer-powerd{
+    margin-left: -330px;
+    margin-top: 50px;
+  }
+  #course-detail-name{
+    margin-top: 10px;
+  }
+  #font-awesome-detail{
+    margin-left: 0px;
+  }
+  #facebook-link{
+    width: 2px;
+  }
+  #course-discription{
+    margin-left: 80px;
+  }
+  #instructor{
+    margin-left: -130px;
+    
+  }
+  #instructor-container{
+    margin-left: -100px;
+  }
+  #instructor-introduction{
+    width: 200%;
+    margin-left: -150px;
+    
+  }
+  #author-container{
+    height: 600px;
+
+  }
+  #course-curriculum{
+    margin-left: 0px;
+    width: 100%;
+  }
+  #course-curriculum h1{
+    margin-left: 40px;
+    width: 100%;
+    font-size: 21px;
+  }
+  #faq{
+    margin-left: 0px;
+  }
+  #faq-container{
+    height: 900px;
+  }
+  #plan{
+    margin-left: 85px;
+  }
+    #plan2{
+    margin-left: 5px;
+  }
+
+
+}
+
+.font-awesome-detail{ 
+  margin-left: 20px;
+}
+
+.course-curriculum{
+   margin-left: 350px; width: 58%;
+}
+.course-curriculum h1{
+   margin: 20px;
+}
+.course-row{
+    margin-left: 500px; margin-top: 40px;
+  }
+
+.footer-terms{
+  margin-left: 800px;
+}
+.foote-powerd{
+  margin-left: 800px; margin-top: -38px;
+}
+.instructor{
+  margin-top: 200px; margin-left: 180px;
+}
+
+.instructor h2{
+  margin-top: -100px;
+}
+
+.faq{
+  margin-left: 180px;
+}
+
+
+
+.course-table{
+  width: 70%; 
+  margin-left: 350px;
+}
+
+#schools-list{
+    margin-left: 300px; margin-top: 100px;
+}

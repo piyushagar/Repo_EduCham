@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  
+    
+  <title>myTeachable</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='js/v1.js'></script>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="teachable-icon.png" />
+  <link rel="stylesheet" media="all" href="{% static 'css/1.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/das.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/email.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/genral.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/try.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}">
+
+  <script src="{% static 'js/v2.js' %}"></script> 
+  <script src="{% static 'js/v3.js' %}"></script>
+   
+ 
+   
+</head>
+<body class="my-teachable-layout">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="sidebar">
+        <div class="profile-card">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="mobile-settings" href="#">
+            <img src="https://assets.teachablecdn.com/icons/icon-settings-white.svg" alt="Icon settings white" />
+          </a>
+          <a class="logo-wrapper" href="#">
+            <img class="logo" src="https://assets.teachablecdn.com/icons/my-teachable-badge.svg" alt="My teachable badge" /
+            >
+          </a>
+          <div class="user-info">
+            <a href="#">
+              <img width="100" height="100" class="avatar" src="https://s.gravatar.com/avatar/5f65395a3f1d7a2baed97ab30bee7da8?d=mm"/>
+            </a>
+            <h2>{{request.user.username}}</h2>
+            <p><a href="#" class="__cf_email__">{{request.user.email}}</a></p>
+            <a class="mobile-logout" href="login.html">Log Out</a>
+          </div>
+        </div>
+        <ul class="nav nav-sidebar  ">
+          <li class="nav-item-profile">
+            <a href="/admin/school/">My Schools</a>
+          </li>
+          <li class="nav-item-create ">
+            <a href="/admin/school/new">Create New School</a>
+          </li>
+          <li class="nav-item-settings">
+            <a href="/new/{{request.tenant.id}}">Domain</a>
+          </li>
+          <li class="nav-item-billing">
+            <a href="/admin/home">Courses</a>
+          </li>
+          <li class="nav-item-profile">
+            <a href="/admin/school/">Leasson</a>
+          </li>
+          <li class="nav-item-profile">
+            <a href="/admin/customize/1">Customize</a>
+          </li>
+          <li class="nav-item-logout">
+            <a href="login.html">Logout</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+{% block content %}
+{% endblock %}
+</body>
+</html>
+

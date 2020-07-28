@@ -1,0 +1,49 @@
+{% extends 'student/main.html' %}
+{% load bootstrap %}
+{% block content %}
+55555555
+<div class="row">
+    <form action="" method="get" class="course-row" id="course-row">
+        
+            <div class="col-lg-4">
+                <div class="form-control-plaintext" style="">
+                    {{ filter.form.as_p }}
+                    
+                </div>
+                
+                    <input type="submit" class="btn btn-primary"/>
+                </div>
+            
+            
+    </form>
+</div>
+    <!-- {% for obj in filter.qs %}
+        {{ obj.title }} - {{ obj.author }}<br />
+    {% endfor %} -->
+   
+
+<div class="container" style=" padding-top: 50px;">
+    
+    <div class="row">
+        {% for obj in filter.qs %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="/media/{{obj.image}}">
+            <div class="box-element product">
+                <h6><strong>{{obj.name}}</strong></h6>
+                <hr>
+
+                <button data-product="{{obj.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Enroll Now</button>
+                <a class="btn btn-outline-success" href="../product/{{obj.id}}">View</a>
+                <h4 style="display: inline-block; float: right"><strong>${{obj.price}}</strong></h4>
+
+            </div>
+        </div>
+        {% endfor %}
+        <div>
+            
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
+

@@ -1,0 +1,122 @@
+{% extends 'myadmin/school/school_base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="thead" id="myyyy">
+  <h1>Coustomize Your Website</h1> 
+</div>
+<br><br><br><br><br>
+<div class="day" id="id-day">>
+  <h3>Information</h3>
+  <span>Add basic information about the course and author name.<br>
+
+To add author headline, image, and bio, please visit site > bios.</span>
+</div>
+<form method="post" class="form-horizontal" enctype="multipart/form-data" id="id-form-horizontal">
+	{% csrf_token %}
+	
+
+	<div id="div_id_navbar" class="form-group">
+    <label for="id_navbar" class="requiredField control-label"> Navbar<span class="asteriskField">*</span> </label>
+    <div class="">
+        <input type="color" id="id_navbar" class="form-control colorfield_field jscolor" name="navbar" value="#FF0000" placeholder="#FF0000" data-jscolor="{hash:true,width:225,height:150,required:true}" required="" />
+        <p id="error_1_id_navbar" class="invalid-feedback"><strong>This field is required.</strong></p>
+    </div>
+</div>
+<div id="div_id_footer" class="form-group">
+    <label for="id_footer" class="requiredField control-label"> Footer<span class="asteriskField">*</span> </label>
+    <div class="">
+        <input type="color" id="id_footer" class="form-control colorfield_field jscolor" name="footer" value="#FF0000" placeholder="#FF0000" data-jscolor="{hash:true,width:225,height:150,required:true}" required="" />
+        <p id="error_1_id_footer" class="invalid-feedback"><strong>This field is required.</strong></p>
+    </div>
+</div>
+
+<div id="div_id_homepageimage" class="form-group">
+    <label for="id_homepageimage" class="control-label"	>
+        Homepageimage
+    </label>
+    <div class=""><input type="file" name="homepageimage" accept="image/*" class="btn btn-danger" id="id_homepageimage" /></div>
+</div>
+
+<div id="div_id_logo" class="form-group">
+    <label for="id_logo" class="control-label">
+        Logo
+    </label>
+
+    <div class=""><input type="file" name="logo" accept="image/*" class="btn btn-primary" id="id_logo" /></div>
+</div>
+<div id="div_id_favicon" class="form-group">
+    <label for="id_favicon" class="control-label">
+        Favicon
+    </label>
+    <div class="">
+        Currently: <a href="/media/images/background-4232859_1280_XVBFSFA.png">images/background-4232859_1280_XVBFSFA.png</a>
+        <input type="checkbox" name="favicon-clear" id="favicon-clear_id" />
+        <label for="favicon-clear_id">Clear</label><br />
+        Change:
+        <input type="file" name="favicon" accept="image/*" class="btn btn-success" id="id_favicon" />
+    </div>
+</div>
+
+<button id="id-btn btn-primary" type="submit" value="submit" class="btn btn-primary btn-lg" >Save</button>
+
+</form>
+</form>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="div_id_footer" class="form-group"> 
+	<label for="id_footer" class=" requiredField">Footer<span class="asteriskField">*</span> </label> 
+	<div class=""> 
+		<input type="color" id="id_footer" class="form-control colorfield_field jscolor" name="footer" {% if form.footer.value != None %}value="{{ form.footer.value|stringformat:'s' }}" {% endif %}" placeholder="#FF0000" data-jscolor="{hash:true,width:225,height:150,required:true}" required="">
+	 </div> 
+	</div> 
+	
+
+
+
+
+	<div id="div_id_homepageimage" class="form-group"> <label for="id_homepageimage" class="">
+                Homepageimage
+            </label> <div class=""> <input type="file" name="homepageimage" accept="image/*" class="clearablefileinput form-control-file" id="id_homepageimage"> </div> </div>
+	<div id="div_id_logo" class="form-group"> <label for="id_logo" class="">Logo</label> 
+		<div class=""> 
+			<input type="file" name="logo" accept="image/*" class="clearablefileinput form-control-file" id="id_logo"> 
+		</div> 
+	</div> 
+	<div id="div_id_favicon" class="form-group"> <label for="id_favicon" class="">Favicon</label> 
+		<div class=""> <input type="file" name="favicon" accept="image/*" class="clearablefileinput form-control-file" id="id_favicon"> 
+		</div> 
+	</div>
+
+
+	<input type="submit" name="submit" value="submit">
+</form>

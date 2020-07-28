@@ -1,0 +1,31 @@
+{% extends 'myadmin/school/school_base.html' %}
+{% load static %}
+{% block content %}
+
+      <div class="main my-teachable-dashboard">
+        <div class="alert alert-danger" role="alert">
+          <ul class="list-unstyled">
+            <li>
+              You are already signed in.
+            </li>
+          </ul>
+        </div>
+
+        <h1>Schools I Own</h1>
+      </div>
+    </div>
+
+<div class="schools-list" id="schools-list">
+  {% for school in school %}
+  <a href="https://cleverprogrammer.teachable.com?sa=a01d8bb3-7227-4640-9137-c247aa77cc3c" class="school-card " style="background-image: url('{% if school.img %}/media/{{ school.img }}{% else %}{% static "image/default-thumbnail-school.svg" %}{% endif %}');" target="_blank" rel="noopener">
+  <div class="school-info">
+    <img class="school-favicon" src="https://www.filepicker.io/api/file/8E5zxR8TREipevaGI7nf">
+    <p class="school-name">{{school.name}}</p>
+    <p class="school-url">{{ request.build_absolute_uri|slice:"7:-8" }}</p>
+  </div>
+</a>
+
+{% endfor %}
+</div>
+
+{% endblock %}

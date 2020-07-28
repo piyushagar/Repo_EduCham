@@ -1,0 +1,53 @@
+{% extends 'student/main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<!-- {% if school.img %}/media/{{ school.img }}{% else %}{% static "image/download.jpg" %}{% endif %} -->
+
+
+<!-- homepage baneer school -->
+	<div style="-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 550px;
+    background-size: cover; background-image: url('{% if school %}{% for school in school|slice:"0:1" %} /media/{{school.img}}{% endfor %}{% else %}../static/image/download.jpg{% endif %}');" class="course-block block homepage_hero">
+    	<ul class="list-group" style="text-align: center;">
+	      <li class="headline"> {% if school %}{% for school in school|slice:"0:1"  %}{{ school.title }}{% endfor %}{% else %}Here Your Title?{% endif %}</li>
+	      <li class="subtitle">{% if school %}{% for school in school|slice:"0:1"  %} {{school.subtitle}}{% endfor %}{% else %}Here Your Subtitle?{% endif %}.</li>
+	      <li class=""><a class="tch-btn-header-primary" href="/sign_up">Enroll now</a></li>
+    	</ul>
+
+		 
+	</div>
+
+
+<div class="container">
+	<h1 style="padding-bottom: 50px; padding-top: 30px; text-align: center;">Featured Courses</h1>
+	
+	<div class="row">
+		{% for product in products|slice:"0:3" %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="/media/{{product.image}}">
+			<div class="box-element product">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+
+				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Enroll Now</button>
+				<a class="btn btn-outline-success" href="product/{{product.id}}">View</a>
+				<h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+		
+	</div>
+	<a class="tch-btn-header-primary" href="/course" id="all-courses" style="">View All Courses</a>
+</div>
+
+
+<!-- <h1>{{ request.build_absolute_uri|slice:"7:-10" }}</h1> -->
+{% endblock %}

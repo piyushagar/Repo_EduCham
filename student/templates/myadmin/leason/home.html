@@ -1,0 +1,44 @@
+{% extends 'myadmin/school/school_base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="thead" id="myyyy">
+  <h1>Leason List</h1> 
+  <a class="plan" id="plan" href="/admin/leason/new">New</a> 
+  <a class="plan2" id="plan2" href="/admin/home">Course</a> 
+</div>
+<br><br><br><br><br>
+
+
+<table  class="table course-table" id="table-course">
+  <thead class="thead-dark">
+    <tr>
+      
+      <th scope="col">Title</th>
+      <th scope="col">Label</th>
+      <th scope="col">Icon</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for leason in leason %}
+    <tr style="border-bottom: 1px solid gray; background-color: white;">
+      <!-- <th scope="row">{{ product.id }}</th> -->
+      <td><a href="/admin/leason/edit/{{leason.id}}">{{ leason.title }}</a></td>
+      <td><i class="{{ leason.get_label_display}}"></i></td>
+      <td><a href="/admin/leason/edit/{{leason.id}}"> <i class="fa fa-edit"></i></a></td>
+      <td><a href="/admin/leason/delete/{{leason.id}}"><i class="fa fa-trash"></a></i></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

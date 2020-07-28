@@ -1,0 +1,13 @@
+<h1>hiii</h1>
+
+
+{{NEW_DOMAIN}}{{full_address}}
+{% for NEW_DOMAIN in NEW_DOMAIN|slice:"0:3" %}
+
+{% endfor %}
+
+<script type="text/javascript">
+	
+	window.location.href = "http://{{full_address}}:8000";
+</script>
+

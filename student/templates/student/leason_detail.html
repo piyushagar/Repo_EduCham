@@ -1,0 +1,47 @@
+{% extends "student/main.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% if leason.video %}
+<div style="margin: 50px;">
+  	<div class="card" style="width: 63rem;" >
+    	<video class="card-img-top" width="320" height="340" controls>
+        	<source src="/media/{{leason.video}}" type="video/mp4">
+    	</video>
+	    <div class="card-body">
+        	<h5 class="card-title">{{leason.title}}</h5>
+      	</div>
+    	{% else %}
+		<div class="container">
+			<div class="row">
+		    	<div class="col-md-8 card mb-4  mt-3 left  top">
+		      		<div class="card-body">
+		        		<h1> {{ leason.title }} </h1>
+		        
+
+		        		<p class="card-text ">{{ leason.content | safe }}</p>
+		        		{% endif %}
+		        		
+
+
+
+<div class="col-sm ">
+            <div class="card" >
+                <form method="post" style="margin: 15px;">
+                    {% csrf_token %}
+                    {{ comment_form.as_p }}
+                    <input type="submit" value="Submit" class="btn btn-outline-success">
+                </form>
+                <div class="main-comment-section" style="margin: 15px;">
+                    {{ comments.count }}Comment{{ comments|pluralize }}
+                    {% for comment in comments %}
+                        <blockquote class="blockquote">
+                          <p class="mb-0">{{comment.content}}</p>
+                          <footer class="blockquote-footer">by <cite title="Source Title">{{comment.user|capfirst}}</cite></footer>
+                        </blockquote>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+{% endblock %}

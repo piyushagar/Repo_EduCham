@@ -1,0 +1,73 @@
+{% extends 'student/main.html' %}
+{% load static %}
+{% block content %}
+<ul id="ulist">
+  <li id="llist"><img src="img_5terre.jpg" alt="my image" width="100%" height="200"></li>
+  <li id="llist"><a  href="#home">Learn Python™ for Beginners (FREE)</a></li>
+  <li id="llist"><a href="#news">Course Curicullum</a></li>
+  <li id="llist"><a href="#contact">Your Instructur</a></li>
+</ul>
+
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+  <div style="margin: 50px; ">
+<h1>Course Curriculum</h1>
+</div>
+<div class="col-sm-12 course-section">
+    <div class="section-title" data-release-date="" data-days-until-dripped="" data-is-dripped-by-date="" data-course-id="105512">
+      <span class="section-lock">
+        <i class="fa fa-lock"></i>&nbsp;
+      </span>
+
+      Course Introduction
+      <div class="section-days-to-drip">
+        <div class="section-days-logged-in">
+          Available in
+          <span class="section-days-to-drip-number"></span>
+          days
+        </div>
+        <div class="section-days-logged-out">
+          <span class="section-days-to-drip-number"></span>
+          days
+          after you enroll
+        </div>
+      </div>
+    </div>
+    <ul class="section-list">
+      {% for leason in leason %}
+      <li class="section-item incomplete next-lecture" data-lecture-id="2972384">
+        <a class="item" data-no-turbolink="true" data-ss-course-id="105512" data-ss-event-name="Lecture: Start (Course Curriculum)" data-ss-event-href="/leason/{{leason.id}}" data-ss-event-type="button" data-ss-lecture-id="2972384" data-ss-school-id="45248" data-ss-user-id="38656623" href="/leason/{{leason.id}}">
+          <span class="status-container" aria-label="Current item">
+            <span class="status-icon">
+              &nbsp;
+            </span>
+          </span>
+          <div class="title-container">
+            <div class="btn-primary btn-sm pull-right">
+              Start
+            </div>
+            <span class="lecture-icon">
+              <i class="fa fa-youtube-play"></i>
+            </span>
+            <span class="lecture-name">
+              {{leason.title}}
+              
+                (2:36)
+              
+
+            </span>
+          </div>
+        </a>
+      </li>
+      
+      
+      
+      
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'myadmin/school/school_base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="thead" id="myyyy">
+  <h1>Delete A Domain</h1> 
+</div>
+<br><br><br><br><br>
+
+
+
+
+<br><br><br><br><br>
+<div style="margin-left: 350px;" id="delete">
+
+<form method="post" id="delete">{% csrf_token %}
+  <div class="alert alert-danger" role="alert" style="width: 80%;">
+      Are you sure you want to delete "{{ request.build_absolute_uri|slice:"7:-10" }}" ?
+      <input class="btn btn-danger" type="submit" value="Submit" /><a class="btn btn-success" href="/new/{{request.tenant.id}}">Cancel</a>
+  </div>
+  </form>
+</div>
+{% endblock %}
+
+
+
+    
+    
+  </div>
+</div>

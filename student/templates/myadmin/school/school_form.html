@@ -1,0 +1,35 @@
+{% extends 'myadmin/school/school_base.html' %}
+{% load static %}
+{% block content %}
+      <div class="main my-teachable-dashboard">
+        <div class="sticky-center-container">
+          <div class="content-box form-wrapper">
+            <form class="new_school" id="new_school" action="" enctype="multipart/form-data"  accept-charset="UTF-8" method="post">
+              {% csrf_token  %}
+              <div class="form-group ">
+                <label class="control-label" for="school_name">
+                  Name Your School
+                </label>
+                <div class="control-input">
+                  <input class="form-control" maxlength="100" placeholder="" required="required" autofocus="autofocus" size="100" type="text" name="name" id="id_name" />
+                  <span class="input-icon"></span>
+                </div>
+                <label class="description">You can always change this later.</label>
+              </div>
+              <div class="button-group text-center">
+                <input type="submit" name="commit" value="Create New School" id="create-school-button" data-disable-with="Creating..." class="btn btn-primary btn-md btn-orange btn-teachable-block" />
+              </div>
+              <div class="skip-wrapper">
+                <a class="skip-wrapper__link" href=''>Skip for now</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+
